@@ -1,6 +1,7 @@
 import flet as ft
 import time
 
+<<<<<<< HEAD
 class DeletionSlider(ft.Control):
     """
     Кастомный виджет-слайдер для подтверждения удаления.
@@ -85,3 +86,63 @@ class DeletionSlider(ft.Control):
             self.thumb.left = 0
             self.track.bgcolor = ft.Colors.SURFACE_VARIANT
             self.update()
+=======
+def DeletionSlider(on_delete_confirmed):
+    """Возвращает GestureDetector со стэком дорожки и ползунка для подтверждения удаления."""
+    thumb = ft.Container(
+        content=ft.Icon(name="delete_forever", color="white"),
+        alignment=ft.alignment.center,
+        width=50,
+        height=50,
+        bgcolor="red",
+        border_radius=ft.border_radius.all(25),
+        left=0,
+        animate_position=100,
+    )
+
+    track = ft.Container(
+        width=280,
+        height=50,
+        border_radius=ft.border_radius.all(25),
+        bgcolor="surfaceVariant",
+        content=ft.Row([
+            ft.Text("  Проведите для удаления", color="onSurfaceVariant", italic=True)
+        ], alignment=ft.MainAxisAlignment.CENTER),
+        animate=100,
+    )
+
+    stack = ft.Stack([track, thumb], width=280, height=50)
+
+    def drag_start(e: ft.DragStartEvent):
+        pass
+
+    def drag_update(e: ft.DragUpdateEvent):
+        max_left = track.width - thumb.width
+        new_left = max(0, min(thumb.left + e.delta_x, max_left))
+        thumb.left = new_left
+        progress = new_left / max_left if max_left else 0
+        track.bgcolor = "red" if progress > 0.5 else "surfaceVariant"
+        stack.update()
+
+    def drag_end(e: ft.DragEndEvent):
+        max_left = track.width - thumb.width
+        if thumb.left >= max_left * 0.9:
+            thumb.left = max_left
+            thumb.content.name = "check"
+            thumb.bgcolor = "green"
+            stack.update()
+            time.sleep(0.3)
+            if on_delete_confirmed:
+                on_delete_confirmed()
+        else:
+            thumb.left = 0
+            track.bgcolor = "surfaceVariant"
+            stack.update()
+
+    return ft.GestureDetector(
+        on_pan_start=drag_start,
+        on_pan_update=drag_update,
+        on_pan_end=drag_end,
+        content=stack,
+    )
+>>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)

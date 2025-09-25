@@ -5,7 +5,11 @@ from functools import partial
 import random
 
 # Импортируем наши сервисы и виджеты
+<<<<<<< HEAD
 from data.data_manager import DataManager, INFO_FILENAME, POSTER_FILENAME
+=======
+from data.data_manager import DataManager, INFO_FILENAME, POSTER_FILENAME, BACKDROP_FILENAME
+>>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
 from api.kinopoisk_client import KinopoiskClient
 from api.qbittorrent_client import QBittorrentClient
 from core.config import save_config
@@ -61,6 +65,15 @@ class AppUI:
         if not full_details: self.show_snackbar("Не удалось получить детальную информацию.", "red"); return
         self.data_manager.save_media_info(kinopoisk_id, full_details); poster_url = full_details.get("poster", {}).get("url")
         if poster_url: self.data_manager.save_poster(kinopoisk_id, poster_url)
+<<<<<<< HEAD
+=======
+        backdrop = full_details.get("backdrop", {}) if isinstance(full_details.get("backdrop", {}), dict) else {}
+        self.data_manager.save_backdrop(
+            kinopoisk_id,
+            backdrop.get("url"),
+            backdrop.get("previewUrl")
+        )
+>>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
         self.show_snackbar(f"'{full_details.get('name')}' добавлен в библиотеку!"); self.load_library_items()
 
     def handle_search(self, e):
@@ -86,7 +99,26 @@ class AppUI:
                 poster_src = str(poster_file.resolve()) if poster_file.exists() else "https://placehold.co/180x270/222/fff?text=No+Poster"
                 status_icon = ft.Container()
                 if data.get("torrent_hash"): status_icon = ft.Icon(name="download_done", color="green", right=5, top=5)
+<<<<<<< HEAD
                 card_content = ft.Stack([ft.Column([ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)), ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True), ft.Text(f"{data.get('year', '')}", size=12)], spacing=4, alignment=ft.MainAxisAlignment.START), status_icon])
+=======
+
+                # Меню на карточке: Открыть / Удалить
+                kinopoisk_id = data.get("id")
+                menu_button = ft.Container(
+                    content=ft.PopupMenuButton(
+                        items=[
+                            ft.PopupMenuItem(text="Открыть", on_click=partial(self.handle_show_details, data)),
+                            ft.PopupMenuItem(text="Удалить…", on_click=(lambda e, _id=kinopoisk_id, _name=data.get('name',''), _hash=data.get('torrent_hash'): self.open_delete_dialog(_id, _name, _hash))),
+                        ]
+                    ),
+                    right=5,
+                    top=5,
+                )
+
+                card_main = ft.Column([ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)), ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True), ft.Text(f"{data.get('year', '')}", size=12)], spacing=4, alignment=ft.MainAxisAlignment.START)
+                card_content = ft.Stack([card_main, status_icon, menu_button])
+>>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
                 clickable_card = ft.Card(ft.Container(content=card_content, on_click=partial(self.handle_show_details, data), border_radius=ft.border_radius.all(8)), elevation=2); self.library_grid.controls.append(clickable_card)
         self.page.update()
     
@@ -114,6 +146,83 @@ class AppUI:
     def build_movies_view(self) -> ft.Control:
         search_bar = ft.Row([self.search_field, ft.IconButton(icon="search", on_click=self.handle_search, tooltip="Искать")])
         return ft.Column([ft.Container(content=search_bar, padding=ft.padding.only(bottom=10)), self.library_grid], expand=True)
+<<<<<<< HEAD
+=======
+
+    def show_person_movies(self, person_id: int, person_name: str):
+        """Отображает все фильмы из библиотеки с участием указанного человека."""
+        grid = ft.GridView(expand=True, runs_count=5, max_extent=180, child_aspect_ratio=0.6, spacing=10, run_spacing=10)
+        item_paths = sorted([p for p in self.data_manager.media_path.iterdir() if p.is_dir()], key=lambda p: p.stat().st_mtime, reverse=True)
+        count = 0
+        for item_path in item_paths:
+            info_file, poster_file = item_path / INFO_FILENAME, item_path / POSTER_FILENAME
+            if not info_file.exists():
+                continue
+            with open(info_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            persons = data.get("persons", []) or []
+            if any(str(p.get("id")) == str(person_id) for p in persons):
+                poster_src = str(poster_file.resolve()) if poster_file.exists() else "https://placehold.co/180x270/222/fff?text=No+Poster"
+                status_icon = ft.Container()
+                if data.get("torrent_hash"):
+                    status_icon = ft.Icon(name="download_done", color="green", right=5, top=5)
+                card_content = ft.Stack([
+                    ft.Column([
+                        ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)),
+                        ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True),
+                        ft.Text(f"{data.get('year', '')}", size=12)
+                    ], spacing=4, alignment=ft.MainAxisAlignment.START),
+                    status_icon
+                ])
+                clickable_card = ft.Card(
+                    ft.Container(content=card_content, on_click=partial(self.handle_show_details, data), border_radius=ft.border_radius.all(8)),
+                    elevation=2
+                )
+                grid.controls.append(clickable_card)
+                count += 1
+
+        header = ft.Row([
+            ft.IconButton(icon="arrow_back", tooltip="Назад", on_click=lambda e: (setattr(self.navigation_rail, 'selected_index', 1), self.handle_nav_change(ft.ControlEvent(target=self.navigation_rail, name="change", data="1", control=self.navigation_rail, page=self.page)))),
+            ft.Text(f"Фильмы с участием: {person_name}", size=20, weight=ft.FontWeight.BOLD),
+            ft.Container(expand=True)
+        ])
+
+        content = ft.Column([
+            ft.Container(content=header, padding=ft.padding.only(bottom=10)),
+            grid if count > 0 else ft.Text("В вашей библиотеке нет фильмов с этим участником."),
+        ], expand=True)
+
+        self.main_content.content = content
+        self.page.update()
+
+    # --- Удаление элемента ---
+    def open_delete_dialog(self, kinopoisk_id: int, movie_name: str, torrent_hash: str | None):
+        def confirm_delete():
+            # Удаляем торрент при необходимости
+            if torrent_hash and self.qbt_client and self.qbt_client.is_connected:
+                try:
+                    self.qbt_client.delete_torrent(torrent_hash, delete_files=True)
+                except Exception:
+                    pass
+            # Удаляем файлы и запись
+            self.data_manager.delete_media_item(kinopoisk_id)
+            # Закрываем диалог и обновляем список
+            dlg.open = False
+            self.page.update()
+            self.load_library_items()
+            self.show_snackbar(f"Удалено: '{movie_name}'", "blue")
+
+        slider = DeletionSlider(on_delete_confirmed=confirm_delete)
+        dlg = ft.AlertDialog(modal=True, title=ft.Text(f"Удалить '{movie_name}'?"), content=slider, actions=[ft.TextButton("Отмена", on_click=lambda e: setattr(dlg, 'open', False))])
+        self.page.dialog = dlg
+        dlg.open = True
+        try:
+            if dlg not in self.page.overlay:
+                self.page.overlay.append(dlg)
+        except Exception:
+            pass
+        self.page.update()
+>>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
     
     def handle_nav_change(self, e):
         selected_index = e.control.selected_index
