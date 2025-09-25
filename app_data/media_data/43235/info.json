@@ -1,0 +1,446 @@
+{
+    "id": 43235,
+    "type": "movie",
+    "externalId": {
+        "imdb": "tt0072027",
+        "tmdb": 275054,
+        "kpHD": "d6eea5ce747c4875b85fc4791e66099f"
+    },
+    "name": "Премия",
+    "rating": {
+        "kp": 8.161,
+        "imdb": 7.6,
+        "filmCritics": 0,
+        "russianFilmCritics": 0,
+        "await": null
+    },
+    "description": "Действие фильма разворачивается в течение полутора-двух часов в одной комнате, где проходит не совсем обычное заседание парткома строительного треста. В повестке дня - отказ целой бригады строителей от премии за «липовые» трудовые достижения!",
+    "votes": {
+        "kp": 16911,
+        "imdb": 550,
+        "filmCritics": 0,
+        "russianFilmCritics": 0,
+        "await": 0
+    },
+    "distributors": {
+        "distributor": null,
+        "distributorRelease": null
+    },
+    "premiere": {
+        "world": "1975-09-22T00:00:00.000Z",
+        "bluray": null,
+        "cinema": null,
+        "digital": null,
+        "dvd": null,
+        "russia": null
+    },
+    "slogan": null,
+    "year": 1974,
+    "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1777765/87b09013-a6d1-4377-a1c3-eb073cfbe214/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1777765/87b09013-a6d1-4377-a1c3-eb073cfbe214/300x450"
+    },
+    "facts": [
+        {
+            "value": "<a href=\"/name/174235/\" class=\"all\">Борислав Брондуков</a>, играющий в фильме роль прораба Зюбина, не понаслышке знал что такое стройка, т.к. был выпускником Киевского строительного техникума и до начала актёрской карьеры некоторое время действительно работал прорабом.",
+            "type": "FACT",
+            "spoiler": false
+        }
+    ],
+    "genres": [
+        {
+            "name": "драма"
+        }
+    ],
+    "countries": [
+        {
+            "name": "СССР"
+        }
+    ],
+    "seasonsInfo": [],
+    "persons": [
+        {
+            "id": 343964,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_343964.jpg",
+            "name": "Евгений Леонов",
+            "enName": null,
+            "description": "Василий Потапов",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 174123,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_174123.jpg",
+            "name": "Владимир Самойлов",
+            "enName": null,
+            "description": "Батарцев Павел Емельянович",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 54829,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_54829.jpg",
+            "name": "Олег Янковский",
+            "enName": null,
+            "description": "Лев Алексеевич Соломахин",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 256993,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_256993.jpg",
+            "name": "Михаил Глузский",
+            "enName": null,
+            "description": "Борис Петрович Шатунов",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 127995,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_127995.jpg",
+            "name": "Армен Джигарханян",
+            "enName": null,
+            "description": "Григорий Иванович",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 300884,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_300884.jpg",
+            "name": "Нина Ургант",
+            "enName": null,
+            "description": "Миленина",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 101752,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_101752.jpg",
+            "name": "Светлана Крючкова",
+            "enName": null,
+            "description": "Шурочка",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 122811,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_122811.jpg",
+            "name": "Александр Пашутин",
+            "enName": null,
+            "description": "бригадир Качнов",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 290628,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_290628.jpg",
+            "name": "Леонид Дьячков",
+            "enName": null,
+            "description": "Виктор Николаевич Черников",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 174235,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_174235.jpg",
+            "name": "Борислав Брондуков",
+            "enName": null,
+            "description": "Зюбин",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 313243,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_313243.jpg",
+            "name": "Михаил Семенов",
+            "enName": null,
+            "description": "Толя Жариков",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 307676,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_307676.jpg",
+            "name": "Гуж Манукян",
+            "enName": null,
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 266195,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_266195.jpg",
+            "name": "Виктор Сергачев",
+            "enName": null,
+            "description": "Роман Кириллович Любае",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 307419,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_307419.jpg",
+            "name": "Анда Зайце",
+            "enName": null,
+            "description": "сотрудница отдела кадров",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 2014184,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2014184.jpg",
+            "name": "Борис Бурмистров",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 307291,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_307291.jpg",
+            "name": "Сергей Микаэлян",
+            "enName": null,
+            "description": null,
+            "profession": "режиссеры",
+            "enProfession": "director"
+        },
+        {
+            "id": 1998553,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1998553.jpg",
+            "name": "Ольга Амосова",
+            "enName": null,
+            "description": null,
+            "profession": "монтажеры",
+            "enProfession": "editor"
+        },
+        {
+            "id": 320137,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_320137.jpg",
+            "name": "Владимир Чумак",
+            "enName": null,
+            "description": null,
+            "profession": "операторы",
+            "enProfession": "operator"
+        },
+        {
+            "id": 1814619,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1814619.jpg",
+            "name": "Олег Гумберто",
+            "enName": null,
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 287327,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_287327.jpg",
+            "name": "Александр Гельман",
+            "enName": null,
+            "description": null,
+            "profession": "сценаристы",
+            "enProfession": "writer"
+        }
+    ],
+    "images": {
+        "framesCount": 0
+    },
+    "lists": [],
+    "spokenLanguages": [],
+    "productionCompanies": [],
+    "typeNumber": 1,
+    "alternativeName": null,
+    "budget": {},
+    "enName": null,
+    "names": [
+        {
+            "name": "Премия"
+        },
+        {
+            "name": "Premiya",
+            "language": "RU",
+            "type": "translit"
+        }
+    ],
+    "ageRating": 12,
+    "movieLength": 89,
+    "ratingMpaa": null,
+    "shortDescription": null,
+    "technology": {
+        "hasImax": false,
+        "has3D": false
+    },
+    "ticketsOnSale": false,
+    "updatedAt": "2025-09-20T23:07:23.861Z",
+    "fees": {
+        "world": {},
+        "russia": {},
+        "usa": {}
+    },
+    "sequelsAndPrequels": [],
+    "similarMovies": [
+        {
+            "id": 277368,
+            "name": "Мы, нижеподписавшиеся",
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1600647/05b67582-b581-49b1-b641-bd75fc03b2db/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1600647/05b67582-b581-49b1-b641-bd75fc03b2db/x1000"
+            },
+            "rating": {
+                "kp": 8.048,
+                "imdb": 7.8,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "year": 1980
+        },
+        {
+            "id": 44467,
+            "name": "Гараж",
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1600647/b34eebcf-7dde-4d6e-92b8-65db1aab935d/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1600647/b34eebcf-7dde-4d6e-92b8-65db1aab935d/x1000"
+            },
+            "rating": {
+                "kp": 8.111,
+                "imdb": 8,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "year": 1979
+        },
+        {
+            "id": 480585,
+            "name": "Заседание парткома",
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1599028/69a7e3f8-b5c3-4e6e-8cce-577f21d14fa2/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1599028/69a7e3f8-b5c3-4e6e-8cce-577f21d14fa2/x1000"
+            },
+            "rating": {
+                "kp": 7.142,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "year": 1977
+        },
+        {
+            "id": 346,
+            "name": "12 разгневанных мужчин",
+            "alternativeName": "12 Angry Men",
+            "type": "movie",
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/9784475/081f9649-0bbd-4232-b4d7-1312c64e567c/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/9784475/081f9649-0bbd-4232-b4d7-1312c64e567c/x1000"
+            },
+            "rating": {
+                "kp": 8.527,
+                "imdb": 9,
+                "filmCritics": 9.1,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "year": 1956
+        },
+        {
+            "id": 222809,
+            "name": "12",
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1629390/b14b9ee7-d8e8-4f18-8031-ef1b3ca2609a/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1629390/b14b9ee7-d8e8-4f18-8031-ef1b3ca2609a/x1000"
+            },
+            "rating": {
+                "kp": 7.735,
+                "imdb": 7.5,
+                "filmCritics": 6.9,
+                "russianFilmCritics": 75,
+                "await": null
+            },
+            "year": 2007
+        },
+        {
+            "id": 42702,
+            "name": "Обратная связь",
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1898899/ba4640e5-6fb5-4641-9138-5e66c59613d0/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1898899/ba4640e5-6fb5-4641-9138-5e66c59613d0/x1000"
+            },
+            "rating": {
+                "kp": 7.157,
+                "imdb": 6.3,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "year": 1977
+        },
+        {
+            "id": 478829,
+            "name": "И снова Крижевский",
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1777765/d5a95ddc-43a9-44b6-8446-ede30b016a23/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1777765/d5a95ddc-43a9-44b6-8446-ede30b016a23/x1000"
+            },
+            "rating": {
+                "kp": 5.75,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "year": 1987
+        }
+    ],
+    "backdrop": {
+        "url": null,
+        "previewUrl": null
+    },
+    "logo": {
+        "url": null
+    },
+    "top10": null,
+    "top250": null,
+    "status": null,
+    "audience": [
+        {
+            "count": 12900000,
+            "country": "СССР"
+        }
+    ],
+    "deletedAt": null,
+    "isSeries": false,
+    "seriesLength": null,
+    "totalSeriesLength": null,
+    "networks": null,
+    "videos": {
+        "trailers": []
+    },
+    "isTmdbChecked": true,
+    "watchability": {
+        "items": [
+            {
+                "name": "Okko",
+                "logo": {
+                    "url": "https://avatars.mds.yandex.net/get-ott/239697/7713e586-17d1-42d1-ac62-53e9ef1e70c3/orig"
+                },
+                "url": "https://okko.tv/movie/premija?utm_medium=referral&utm_source=yandex_search&utm_campaign=new_search_feed"
+            }
+        ]
+    },
+    "userRatingsParsed": true,
+    "keywordsParsed": false,
+    "studioParsed": true
+}

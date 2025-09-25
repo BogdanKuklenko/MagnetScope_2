@@ -1,0 +1,723 @@
+{
+    "status": null,
+    "externalId": {
+        "kpHD": null,
+        "imdb": "tt0057426",
+        "tmdb": 4025
+    },
+    "rating": {
+        "kp": 7.121,
+        "imdb": 6.8,
+        "filmCritics": 5.4,
+        "russianFilmCritics": 0,
+        "await": null
+    },
+    "votes": {
+        "kp": 509,
+        "imdb": 5621,
+        "filmCritics": 10,
+        "russianFilmCritics": 0,
+        "await": 0
+    },
+    "backdrop": {
+        "url": null,
+        "previewUrl": null
+    },
+    "movieLength": 134,
+    "images": {
+        "framesCount": 2
+    },
+    "productionCompanies": [
+        {
+            "name": "Roxbury Productions",
+            "url": null,
+            "previewUrl": null
+        }
+    ],
+    "spokenLanguages": [
+        {
+            "name": "English",
+            "nameEn": "English"
+        }
+    ],
+    "id": 12656,
+    "type": "movie",
+    "name": "Премия",
+    "description": "Место действия фильма - Стокгольм, куда съезжаются лауреаты Нобелевской Премии для получения наград. Лауреат литературной премии Эндрю Крейг, бабник и выпивоха, ввязывается в криминальную историю с участием международных террористов, похитивших лауреата премии по физике доктора Макса Штратмана.",
+    "distributors": {
+        "distributor": null,
+        "distributorRelease": null
+    },
+    "premiere": {
+        "world": "1963-12-25T00:00:00.000Z",
+        "bluray": null,
+        "cinema": null,
+        "digital": null,
+        "dvd": null,
+        "russia": null
+    },
+    "slogan": "People go to nudist meetings for various reasons...his was murder!",
+    "year": 1963,
+    "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1629390/a070391e-ee48-4637-9d13-8e2b43ec127b/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1629390/a070391e-ee48-4637-9d13-8e2b43ec127b/300x450"
+    },
+    "facts": null,
+    "genres": [
+        {
+            "name": "триллер"
+        },
+        {
+            "name": "драма"
+        },
+        {
+            "name": "криминал"
+        },
+        {
+            "name": "детектив"
+        }
+    ],
+    "countries": [
+        {
+            "name": "США"
+        }
+    ],
+    "seasonsInfo": [],
+    "persons": [
+        {
+            "id": 11862,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_11862.jpg",
+            "name": "Пол Ньюман",
+            "enName": "Paul Newman",
+            "description": "Andrew Craig",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 183213,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_183213.jpg",
+            "name": "Эдвард Г. Робинсон",
+            "enName": "Edward G. Robinson",
+            "description": "Dr. Max Stratman",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 119809,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_119809.jpg",
+            "name": "Эльке Зоммер",
+            "enName": "Elke Sommer",
+            "description": "Inger Lisa Andersson",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 12084,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_12084.jpg",
+            "name": "Дайан Бэйкер",
+            "enName": "Diane Baker",
+            "description": "Emily Stratman",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 29486,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_29486.jpg",
+            "name": "Мишлин Прель",
+            "enName": "Micheline Presle",
+            "description": "Dr. Denise Marceau",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 84168,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_84168.jpg",
+            "name": "Жерар Ури",
+            "enName": "Gérard Oury",
+            "description": "Dr. Claude Marceau (в титрах: Gerard Oury)",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 148449,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_148449.jpg",
+            "name": "Серджо Фантони",
+            "enName": "Sergio Fantoni",
+            "description": "Dr. Carlo Farelli",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 32993,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_32993.jpg",
+            "name": "Кевин МакКарти",
+            "enName": "Kevin McCarthy",
+            "description": "Dr. John Garrett",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196670,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196670.jpg",
+            "name": "Лео Г. Кэррол",
+            "enName": "Leo G. Carroll",
+            "description": "Count Bertil Jacobsson",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 171576,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_171576.jpg",
+            "name": "Саша Питоефф",
+            "enName": "Sacha Pitoëff",
+            "description": "Daranyi (в титрах: Sacha Pitoeff)",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196671,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196671.jpg",
+            "name": "Жаклин Бир",
+            "enName": "Jacqueline Beer",
+            "description": "Monique Souvir",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 194549,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_194549.jpg",
+            "name": "Джон Венграф",
+            "enName": "John Wengraf",
+            "description": "Hans Eckhart",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 162854,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_162854.jpg",
+            "name": "Дон Даббинс",
+            "enName": "Don Dubbins",
+            "description": "Ivar Cramer",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 189765,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_189765.jpg",
+            "name": "Вирджиния Кристин",
+            "enName": "Virginia Christine",
+            "description": "Mrs. Bergh",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 195483,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_195483.jpg",
+            "name": "Рудольф Андерс",
+            "enName": "Rudolph Anders",
+            "description": "Mr. Rolfe Bergh",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 176194,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_176194.jpg",
+            "name": "Мартин Бартлетт",
+            "enName": "Martine Bartlett",
+            "description": "Saralee Garrett",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 184279,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_184279.jpg",
+            "name": "Карл Свенсон",
+            "enName": "Karl Swenson",
+            "description": "Hilding",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 189767,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_189767.jpg",
+            "name": "Джон Кволен",
+            "enName": "John Qualen",
+            "description": "Oscar",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196672,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196672.jpg",
+            "name": "Нед Уэвер",
+            "enName": "Ned Wever",
+            "description": "Clark Wilson",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196673,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196673.jpg",
+            "name": null,
+            "enName": "Larry Adare",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196674,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196674.jpg",
+            "name": null,
+            "enName": "Robin Adare",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 211734,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_211734.jpg",
+            "name": "Джон Элбан",
+            "enName": "John Alban",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 205782,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_205782.jpg",
+            "name": "Дон Андерсон",
+            "enName": "Don Anderson",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 208143,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_208143.jpg",
+            "name": "Моня Андре",
+            "enName": "Monya Andre",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 202810,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_202810.jpg",
+            "name": null,
+            "enName": "Edward Astran",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 195481,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_195481.jpg",
+            "name": "Джон Баннер",
+            "enName": "John Banner",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 202844,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_202844.jpg",
+            "name": "Джордж Благой",
+            "enName": "George Blagoi",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 5863038,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_5863038.jpg",
+            "name": null,
+            "enName": "Gary Bohn",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196675,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196675.jpg",
+            "name": "Свен Хьюго Борг",
+            "enName": "Sven Hugo Borg",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 171780,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_171780.jpg",
+            "name": "Питер Борн",
+            "enName": "Peter Bourne",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 194345,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_194345.jpg",
+            "name": "Джордж Бойс",
+            "enName": "George Boyce",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 169501,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_169501.jpg",
+            "name": "Мартин Брандт",
+            "enName": "Martin Brandt",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 146301,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_146301.jpg",
+            "name": "Пауль Буш",
+            "enName": "Paul Busch",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196676,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196676.jpg",
+            "name": "Кэрол Байрон",
+            "enName": "Carol Byron",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 202430,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_202430.jpg",
+            "name": "Джордж Каллига",
+            "enName": "George Calliga",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196677,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196677.jpg",
+            "name": "Карл Карлссон",
+            "enName": "Carl Carlsson",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 160437,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_160437.jpg",
+            "name": "Альберт Кэрриэр",
+            "enName": "Albert Carrier",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 206532,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_206532.jpg",
+            "name": "Стив Карратерс",
+            "enName": "Steve Carruthers",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196678,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196678.jpg",
+            "name": "Джилл Карсон",
+            "enName": "Jill Carson",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196771,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196771.jpg",
+            "name": "Джек Чиф",
+            "enName": "Jack Chefe",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 196679,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_196679.jpg",
+            "name": "Питер Коу",
+            "enName": "Peter Coe",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 202936,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_202936.jpg",
+            "name": "Пол Кристо",
+            "enName": "Paul Cristo",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 206339,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_206339.jpg",
+            "name": "Сейр Диаринг",
+            "enName": "Sayre Dearing",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 200427,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_200427.jpg",
+            "name": "Гарри Денни",
+            "enName": "Harry Denny",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 177623,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_177623.jpg",
+            "name": "Джордж ДеНорманд",
+            "enName": "George DeNormand",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 189795,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_189795.jpg",
+            "name": "Ноэль Дрейтон",
+            "enName": "Noel Drayton",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 167243,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_167243.jpg",
+            "name": "Кеннет Ду Майн",
+            "enName": "Ken DuMain",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 17629,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_17629.jpg",
+            "name": "Джерри Данфи",
+            "enName": "Jerry Dunphy",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 186786,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_186786.jpg",
+            "name": "Харольд Дайренфорт",
+            "enName": "Harold Dyrenforth",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 165943,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_165943.jpg",
+            "name": "Сэм Эдвардс",
+            "enName": "Sam Edwards",
+            "description": "Reporter",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 128785,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_128785.jpg",
+            "name": "Джерри Голдсмит",
+            "enName": "Jerry Goldsmith",
+            "description": null,
+            "profession": "композиторы",
+            "enProfession": "composer"
+        },
+        {
+            "id": 2000050,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2000050.jpg",
+            "name": "Джордж У. Дэвис",
+            "enName": "George W. Davis",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 1998528,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1998528.jpg",
+            "name": "Ури МакКлири",
+            "enName": "Urie McCleary",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 197285,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_197285.jpg",
+            "name": "Генри Грейс",
+            "enName": "Henry Grace",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2011185,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2011185.jpg",
+            "name": "Ричард Пефферл",
+            "enName": "Richard Pefferle",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 173503,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_173503.jpg",
+            "name": "Марк Робсон",
+            "enName": "Mark Robson",
+            "description": null,
+            "profession": "режиссеры",
+            "enProfession": "director"
+        },
+        {
+            "id": 2005239,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2005239.jpg",
+            "name": "Эдриэнн Фэзан",
+            "enName": "Adrienne Fazan",
+            "description": null,
+            "profession": "монтажеры",
+            "enProfession": "editor"
+        },
+        {
+            "id": 193349,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_193349.jpg",
+            "name": "Уильям Х. Дэниелс",
+            "enName": "William H. Daniels",
+            "description": null,
+            "profession": "операторы",
+            "enProfession": "operator"
+        },
+        {
+            "id": 154896,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_154896.jpg",
+            "name": "Пандро С. Берман",
+            "enName": "Pandro S. Berman",
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 194521,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_194521.jpg",
+            "name": "Кэтрин Херфорд",
+            "enName": "Kathryn Hereford",
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 93355,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_93355.jpg",
+            "name": "Эрнест Леман",
+            "enName": "Ernest Lehman",
+            "description": null,
+            "profession": "сценаристы",
+            "enProfession": "writer"
+        },
+        {
+            "id": 187017,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_187017.jpg",
+            "name": "Ирвинг Уоллес",
+            "enName": "Irving Wallace",
+            "description": null,
+            "profession": "сценаристы",
+            "enProfession": "writer"
+        }
+    ],
+    "lists": [],
+    "typeNumber": 1,
+    "alternativeName": "The Prize",
+    "enName": null,
+    "names": [
+        {
+            "name": "Премия"
+        },
+        {
+            "name": "The Prize"
+        },
+        {
+            "name": "El premio",
+            "language": "ES",
+            "type": null
+        },
+        {
+            "name": "Pas de lauriers pour les tueurs",
+            "language": "FR",
+            "type": null
+        },
+        {
+            "name": "Der Preis",
+            "language": "DE",
+            "type": "video title"
+        },
+        {
+            "name": "스톡홀름의 위기",
+            "language": "KR",
+            "type": null
+        }
+    ],
+    "ageRating": 16,
+    "budget": {},
+    "ratingMpaa": null,
+    "fees": {
+        "world": {},
+        "russia": {},
+        "usa": {}
+    },
+    "updatedAt": "2025-06-25T23:30:41.872Z",
+    "similarMovies": [],
+    "sequelsAndPrequels": [],
+    "shortDescription": null,
+    "technology": {
+        "hasImax": false,
+        "has3D": false
+    },
+    "ticketsOnSale": false,
+    "logo": {
+        "url": null,
+        "previewUrl": null
+    },
+    "top10": null,
+    "top250": null,
+    "deletedAt": null,
+    "isSeries": false,
+    "seriesLength": null,
+    "totalSeriesLength": null,
+    "networks": null,
+    "videos": {
+        "trailers": [
+            {
+                "url": "https://www.youtube.com/embed/ZhcKEekDUp8",
+                "name": "The Prize (1963) ORIGINAL TRAILER [HD 1080p]",
+                "site": "youtube",
+                "type": "TRAILER"
+            }
+        ]
+    },
+    "isTmdbChecked": true,
+    "watchability": {
+        "items": []
+    },
+    "userRatingsParsed": true,
+    "keywordsParsed": true,
+    "studioParsed": true
+}
