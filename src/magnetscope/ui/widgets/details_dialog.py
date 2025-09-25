@@ -122,8 +122,8 @@ class DetailsDialog(ft.AlertDialog):
         # Слайдер удаления
         delete_slider = DeletionSlider(on_delete_confirmed=self._handle_delete_item)
 
-        # Контент справа
-        right_column = ft.Column([
+        # Контент справа со скроллом всей колонки
+        right_controls = [
             ft.Text(f"Год: {self.year} | Рейтинг KP: {rating}", size=16, weight=ft.FontWeight.BOLD),
             ft.Text(f"Жанры: {genres}", size=14, italic=True),
             links_row,
@@ -148,7 +148,8 @@ class DetailsDialog(ft.AlertDialog):
             add_to_collection_row,
             ft.Divider(),
             delete_slider,
-        ], expand=True, spacing=10)
+        ]
+        right_column = ft.Container(content=ft.ListView(controls=right_controls, expand=True, spacing=10), expand=True)
 
         # Кинематографичный фон
         background = ft.Image(src=backdrop_src, fit=ft.ImageFit.COVER, opacity=0.15) if backdrop_src else ft.Container()
@@ -157,7 +158,13 @@ class DetailsDialog(ft.AlertDialog):
             background,
             ft.Container(
                 content=ft.Row([
-                    ft.Image(src=poster_src, height=450, border_radius=ft.border_radius.all(8)),
+                    ft.Stack([
+                        ft.Image(src=poster_src, height=450, border_radius=ft.border_radius.all(8)),
+                        ft.Container(left=10, bottom=10, content=ft.Stack([
+                            ft.Container(width=16, height=16, bgcolor="black", opacity=0.22, border_radius=ft.border_radius.all(5)),
+                            ft.Container(content=ft.Text("q", size=11, weight=ft.FontWeight.BOLD, color="#2C9CFF"), alignment=ft.alignment.center),
+                        ], width=16, height=16)),
+                    ]),
                     right_column
                 ], width=900, vertical_alignment=ft.CrossAxisAlignment.START, expand=False),
                 padding=ft.padding.all(16),
@@ -172,30 +179,45 @@ class DetailsDialog(ft.AlertDialog):
 
     def _build_torrent_section(self) -> ft.Control:
         """Строит секцию управления торрентом."""
-        if self.torrent_hash and self.app.qbt_client.is_connected:
-            torrent_info = self.app.qbt_client.get_torrent_info(self.torrent_hash)
-            if torrent_info:
-                progress = torrent_info.get('progress', 0)
-                state = torrent_info.get('state', 'N/A').capitalize()
-                speed = torrent_info.get('dlspeed', 0) / 1024 # KB/s
-                
-                return ft.Column([
-                    ft.Text("Статус загрузки", weight=ft.FontWeight.BOLD),
-                    ft.Text(f"Состояние: {state}"),
-                    ft.ProgressBar(value=progress),
-                    ft.Text(f"{progress*100:.1f}% со скоростью {speed:.1f} KB/s"),
-                ])
-            else:
-                 return ft.Text("Торрент не найден в qBittorrent.")
+        def build_magnet_input(notice: str | None = None) -> ft.Control:
+            # Поле ввода плюс управление персональной сохраненной ссылкой для текущего фильма
+            saved_for_item = self.app.data_manager.get_saved_magnet_for_item(self.kinopoisk_id) or ""
+            self.magnet_field = ft.TextField(label="Вставьте magnet-ссылку сюда", expand=True, value=saved_for_item)
+            actions_row = ft.Row([
+                ft.IconButton(icon="download", tooltip="Скачать", on_click=self._handle_add_torrent),
+                ft.IconButton(icon="content_copy", tooltip="Копировать", on_click=lambda e: (self.app.page.set_clipboard(self.magnet_field.value), self.app.show_snackbar("Ссылка скопирована"))),
+                ft.IconButton(icon="save", tooltip="Сохранить", on_click=lambda e: (self.app.data_manager.set_saved_magnet_for_item(self.kinopoisk_id, self.magnet_field.value), self.app.show_snackbar("Ссылка сохранена"))),
+                ft.IconButton(icon="delete", tooltip="Удалить", on_click=lambda e: (self.app.data_manager.set_saved_magnet_for_item(self.kinopoisk_id, None), setattr(self.magnet_field, 'value', ''), self.app.show_snackbar("Ссылка удалена"), self.app.page.update())),
+                ft.ElevatedButton("Найти на Rutracker", icon="search", on_click=lambda e: self.app.open_rutracker_search(self.movie_title, self.year)),
+            ], spacing=6)
+            items: list[ft.Control] = [
+                ft.Text("Торренты", weight=ft.FontWeight.BOLD),
+                self.magnet_field,
+                actions_row,
+            ]
+            if notice:
+                items.insert(1, ft.Text(notice, color="orange"))
+            return ft.Column(items, spacing=8)
+
+        if self.app.qbt_client.is_connected:
+            if self.torrent_hash:
+                torrent_info = self.app.qbt_client.get_torrent_info(self.torrent_hash)
+                if torrent_info:
+                    # Индикатор перенесён в AppBar — покажем уведомление И блок работы с ссылкой
+                    notice = ft.Row([
+                        ft.Icon(name="info"),
+                        ft.Text("Загрузка отображается вверху рядом с названием программы", italic=True, color="onSurfaceVariant"),
+                    ], spacing=8)
+                    return ft.Column([
+                        notice,
+                        build_magnet_input(),
+                    ], spacing=8)
+                else:
+                    return build_magnet_input("Торрент не найден в qBittorrent.")
+            # нет torrent_hash
+            return build_magnet_input()
         else:
-            self.magnet_field = ft.TextField(label="Вставьте magnet-ссылку сюда", expand=True)
-            return ft.Column([
-                ft.Text("Добавить торрент", weight=ft.FontWeight.BOLD),
-                ft.Row([
-                    self.magnet_field,
-                    ft.IconButton(icon="download", tooltip="Скачать", on_click=self._handle_add_torrent)
-                ])
-            ])
+            return build_magnet_input("qBittorrent не подключен. Проверьте настройки.")
 
     # --- Обработчики событий ---
 
@@ -213,6 +235,10 @@ class DetailsDialog(ft.AlertDialog):
         if torrent_hash:
             self.app.update_movie_data(self.kinopoisk_id, {"torrent_hash": torrent_hash})
             self.app.show_snackbar("Торрент успешно добавлен в qBittorrent!")
+            self.app.data_manager.save_magnet_link(magnet_link)
+            self.app.data_manager.set_saved_magnet_for_item(self.kinopoisk_id, magnet_link)
+            # Запускаем глобальный мониторинг прогресса
+            self.app.start_torrent_monitor(torrent_hash)
             self._close_dialog()
             self.app.load_library_items()
         else:

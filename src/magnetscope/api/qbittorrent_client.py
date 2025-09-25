@@ -58,7 +58,19 @@ class QBittorrentClient:
                 # Получаем хэш только что добавленного торрента
                 torrent_info = self.client.torrents_info(sort="added_on", reverse=True, limit=1)
                 if torrent_info:
-                    return torrent_info[0].hash
+                    torrent_hash = torrent_info[0].hash
+                    # Включаем последовательную загрузку и приоритет крайних частей
+                    try:
+                        if hasattr(self.client, "torrents_set_sequential_download"):
+                            self.client.torrents_set_sequential_download(value=True, hashes=torrent_hash)
+                    except Exception as e:
+                        print(f"Не удалось включить последовательную загрузку: {e}")
+                    try:
+                        if hasattr(self.client, "torrents_set_first_last_piece_priority"):
+                            self.client.torrents_set_first_last_piece_priority(value=True, hashes=torrent_hash)
+                    except Exception as e:
+                        print(f"Не удалось включить приоритет первых/последних частей: {e}")
+                    return torrent_hash
             return None
         except Exception as e:
             print(f"Ошибка добавления торрента: {e}")
@@ -76,7 +88,21 @@ class QBittorrentClient:
         try:
             torrents = self.client.torrents_info(torrent_hashes=torrent_hash)
             if torrents:
-                return torrents[0]  # Возвращаем первый и единственный торрент
+                t = torrents[0]
+                # Приводим к обычному dict (qbittorrent_api возвращает объект-модель)
+                try:
+                    info = dict(t)
+                except Exception:
+                    # Фолбек: собрать часто используемые поля
+                    info = {
+                        "progress": getattr(t, "progress", None),
+                        "dlspeed": getattr(t, "dlspeed", None),
+                        "state": getattr(t, "state", None),
+                        "num_seeds": getattr(t, "num_seeds", None),
+                        "num_leechs": getattr(t, "num_leechs", None),
+                        "eta": getattr(t, "eta", None),
+                    }
+                return info
             return None
         except Exception as e:
             print(f"Ошибка получения информации о торренте {torrent_hash}: {e}")

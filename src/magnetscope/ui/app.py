@@ -3,6 +3,9 @@ from configparser import ConfigParser
 import json
 from functools import partial
 import random
+from urllib.parse import quote
+import threading
+import time
 
 # Импортируем наши сервисы и виджеты
 <<<<<<< HEAD
@@ -29,6 +32,29 @@ class AppUI:
             on_change=self.handle_nav_change, group_alignment=-0.9,
         )
         self.kp_token_field = ft.TextField(label="Токен API Кинопоиска", password=True, can_reveal_password=True); self.qbt_host_field = ft.TextField(label="Хост qBittorrent"); self.qbt_port_field = ft.TextField(label="Порт qBittorrent"); self.qbt_user_field = ft.TextField(label="Пользователь qBittorrent"); self.qbt_pass_field = ft.TextField(label="Пароль qBittorrent", password=True, can_reveal_password=True)
+
+        # Глобальный статус-бар загрузки (в AppBar)
+        self.current_torrent_hash: str | None = None
+        self.global_progress = ft.ProgressBar(value=0, expand=True)
+        self.global_percent = ft.Text("0%", size=11)
+        self.global_speed = ft.Text("Скорость: 0 КБ/с", size=11)
+        self.global_seeds = ft.Text("Сиды: 0", size=11)
+        self.global_eta = ft.Text("Осталось: --", size=11)
+        self.status_row = ft.Column([
+            ft.Row([self.global_progress], expand=True),
+            ft.Row([self.global_percent, self.global_speed, self.global_seeds, self.global_eta], spacing=10, alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+        ], spacing=4)
+        self.status_card = ft.Container(
+            content=self.status_row,
+            bgcolor="surfaceVariant",
+            border_radius=ft.border_radius.all(8),
+            padding=ft.padding.symmetric(horizontal=10, vertical=6),
+            width=360,
+            visible=False,
+        )
+        # Поток мониторинга вместо Timer/Poll (совместимо с вашей версией Flet)
+        self._monitor_thread: threading.Thread | None = None
+        self._monitor_stop = threading.Event()
 
     def show_snackbar(self, message: str, color: str = "green"):
         self.page.snack_bar = ft.SnackBar(content=ft.Text(message), bgcolor=color, duration=2000)
@@ -83,8 +109,21 @@ class AppUI:
         if not search_results: self.library_grid.controls.append(ft.Text("Ничего не найдено."))
         else:
             for movie in search_results:
-                card_content = ft.Column([ft.Image(src=movie.get("poster",{}).get("previewUrl", "https://placehold.co/180x270/222/fff?text=No+Image"), border_radius=ft.border_radius.all(8)), ft.Text(movie.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True), ft.Text(f"{movie.get('year', '')}, {movie.get('type', '')}", size=12)], spacing=4, alignment=ft.MainAxisAlignment.START)
-                clickable_card = ft.Card(ft.Container(content=card_content, on_click=partial(self.handle_add_movie, movie), border_radius=ft.border_radius.all(8)), elevation=2); self.library_grid.controls.append(clickable_card)
+                # Кнопка меню для быстрого поиска на Rutracker
+                menu_button = ft.Container(
+                    content=ft.PopupMenuButton(
+                        items=[
+                            ft.PopupMenuItem(text="Добавить в библиотеку", on_click=partial(self.handle_add_movie, movie)),
+                            ft.PopupMenuItem(text="Найти на Rutracker", on_click=(lambda e, _title=movie.get('name',''), _year=movie.get('year',''): self.open_rutracker_search(_title, _year))),
+                        ]
+                    ),
+                    right=5,
+                    top=5,
+                )
+                poster = ft.Image(src=movie.get("poster",{}).get("previewUrl", "https://placehold.co/180x270/222/fff?text=No+Image"), border_radius=ft.border_radius.all(8), width=180, height=270, fit=ft.ImageFit.COVER)
+                card_content = ft.Stack([poster, menu_button], width=180, height=270)
+                clickable_container = ft.Container(content=card_content, on_click=partial(self.handle_add_movie, movie))
+                self.library_grid.controls.append(clickable_container)
         self.page.update()
     
     def load_library_items(self):
@@ -97,11 +136,34 @@ class AppUI:
             if info_file.exists():
                 with open(info_file, "r", encoding="utf-8") as f: data = json.load(f)
                 poster_src = str(poster_file.resolve()) if poster_file.exists() else "https://placehold.co/180x270/222/fff?text=No+Poster"
+<<<<<<< HEAD
                 status_icon = ft.Container()
                 if data.get("torrent_hash"): status_icon = ft.Icon(name="download_done", color="green", right=5, top=5)
 <<<<<<< HEAD
                 card_content = ft.Stack([ft.Column([ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)), ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True), ft.Text(f"{data.get('year', '')}", size=12)], spacing=4, alignment=ft.MainAxisAlignment.START), status_icon])
 =======
+=======
+                status_badge = ft.Container()
+                if data.get("torrent_hash"):
+                    status_badge = ft.Container(
+                        left=10,
+                        bottom=10,
+                        content=ft.Stack([
+                            ft.Container(
+                                width=24, 
+                                height=24, 
+                                bgcolor="black,0.7",
+                                border_radius=ft.border_radius.all(12)
+                            ),
+                            ft.Container(
+                                content=ft.Text("q", size=14, weight=ft.FontWeight.BOLD, color="#2C9CFF"),
+                                alignment=ft.alignment.center,
+                                width=24,
+                                height=24
+                            ),
+                        ]),
+                    )
+>>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
 
                 # Меню на карточке: Открыть / Удалить
                 kinopoisk_id = data.get("id")
@@ -109,18 +171,34 @@ class AppUI:
                     content=ft.PopupMenuButton(
                         items=[
                             ft.PopupMenuItem(text="Открыть", on_click=partial(self.handle_show_details, data)),
+                            ft.PopupMenuItem(text="Найти на Rutracker", on_click=(lambda e, _title=data.get('name',''), _year=data.get('year',''): self.open_rutracker_search(_title, _year))),
                             ft.PopupMenuItem(text="Удалить…", on_click=(lambda e, _id=kinopoisk_id, _name=data.get('name',''), _hash=data.get('torrent_hash'): self.open_delete_dialog(_id, _name, _hash))),
                         ]
                     ),
                     right=5,
                     top=5,
                 )
+<<<<<<< HEAD
 
                 card_main = ft.Column([ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)), ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True), ft.Text(f"{data.get('year', '')}", size=12)], spacing=4, alignment=ft.MainAxisAlignment.START)
                 card_content = ft.Stack([card_main, status_icon, menu_button])
 >>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
                 clickable_card = ft.Card(ft.Container(content=card_content, on_click=partial(self.handle_show_details, data), border_radius=ft.border_radius.all(8)), elevation=2); self.library_grid.controls.append(clickable_card)
+=======
+                poster = ft.Image(src=poster_src, border_radius=ft.border_radius.all(8), width=180, height=270, fit=ft.ImageFit.COVER)
+                card_content = ft.Stack([poster, status_badge, menu_button], width=180, height=270)
+                clickable_container = ft.Container(content=card_content, on_click=partial(self.handle_show_details, data))
+                self.library_grid.controls.append(clickable_container)
+>>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
         self.page.update()
+
+    def open_rutracker_search(self, title: str, year: str | int | None):
+        query = (title or "").strip()
+        if year:
+            query = f"{query} {year}".strip()
+        if not query:
+            return
+        self.page.launch_url(f"https://rutracker.org/forum/tracker.php?nm={quote(query)}")
     
     def handle_save_settings(self, e):
         self.config.set("Settings", "kinopoisk_token", self.kp_token_field.value); self.config.set("qBittorrent", "host", self.qbt_host_field.value); self.config.set("qBittorrent", "port", self.qbt_port_field.value); self.config.set("qBittorrent", "user", self.qbt_user_field.value); self.config.set("qBittorrent", "passw", self.qbt_pass_field.value)
@@ -163,22 +241,30 @@ class AppUI:
             persons = data.get("persons", []) or []
             if any(str(p.get("id")) == str(person_id) for p in persons):
                 poster_src = str(poster_file.resolve()) if poster_file.exists() else "https://placehold.co/180x270/222/fff?text=No+Poster"
-                status_icon = ft.Container()
+                status_badge = ft.Container()
                 if data.get("torrent_hash"):
-                    status_icon = ft.Icon(name="download_done", color="green", right=5, top=5)
-                card_content = ft.Stack([
-                    ft.Column([
-                        ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)),
-                        ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True),
-                        ft.Text(f"{data.get('year', '')}", size=12)
-                    ], spacing=4, alignment=ft.MainAxisAlignment.START),
-                    status_icon
-                ])
-                clickable_card = ft.Card(
-                    ft.Container(content=card_content, on_click=partial(self.handle_show_details, data), border_radius=ft.border_radius.all(8)),
-                    elevation=2
-                )
-                grid.controls.append(clickable_card)
+                    status_badge = ft.Container(
+                        left=10,
+                        bottom=10,
+                        content=ft.Stack([
+                            ft.Container(
+                                width=24, 
+                                height=24, 
+                                bgcolor="black,0.7",
+                                border_radius=ft.border_radius.all(12)
+                            ),
+                            ft.Container(
+                                content=ft.Text("q", size=14, weight=ft.FontWeight.BOLD, color="#2C9CFF"),
+                                alignment=ft.alignment.center,
+                                width=24,
+                                height=24
+                            ),
+                        ]),
+                    )
+                poster = ft.Image(src=poster_src, border_radius=ft.border_radius.all(8), width=180, height=270, fit=ft.ImageFit.COVER)
+                card_content = ft.Stack([poster, status_badge], width=180, height=270)
+                clickable_container = ft.Container(content=card_content, on_click=partial(self.handle_show_details, data))
+                grid.controls.append(clickable_container)
                 count += 1
 
         header = ft.Row([
@@ -234,8 +320,110 @@ class AppUI:
         self.page.update()
 
     def build(self):
-        self.page.appbar = ft.AppBar(title=ft.Text("MagnetScope"), center_title=True, bgcolor="surfaceVariant")
+        self.page.appbar = ft.AppBar(title=ft.Container(), center_title=True, bgcolor="surfaceVariant", actions=[self.status_card])
         self.load_library_items(); self.main_content.content = self.build_home_view()
         layout = ft.Row([self.navigation_rail, ft.VerticalDivider(width=1), self.main_content], expand=True)
         self.page.add(layout); self.page.update()
+        # адаптивная ширина карточки статуса
+        self.page.on_resized = self._handle_page_resize
+        self._handle_page_resize(None)
+
+    # --- Глобальный статус-бар ---
+    def start_torrent_monitor(self, torrent_hash: str):
+        self.current_torrent_hash = torrent_hash
+        self.status_card.visible = True
+        self.page.update()
+        # Перезапуск фонового мониторинга
+        if self._monitor_thread and self._monitor_thread.is_alive():
+            self._monitor_stop.set(); self._monitor_thread.join(timeout=0.2)
+        self._monitor_stop.clear()
+        self._monitor_thread = threading.Thread(target=self._monitor_loop, daemon=True)
+        self._monitor_thread.start()
+
+    def stop_torrent_monitor(self):
+        self.current_torrent_hash = None
+        self.status_card.visible = False
+        self.global_progress.value = 0
+        self.global_percent.value = "0%"
+        self.global_speed.value = "0 KB/s"
+        self.global_seeds.value = "Сиды: 0"
+        self.global_eta.value = "ETA: --"
+        self.page.update()
+
+    def _handle_page_resize(self, e):
+        try:
+            width = int(max(260, min(440, (self.page.window_width or 1000) * 0.32)))
+        except Exception:
+            width = 360
+        self.status_card.width = width
+        self.page.update()
+
+    def _monitor_loop(self):
+        while not self._monitor_stop.is_set() and self.qbt_client and self.qbt_client.is_connected and self.current_torrent_hash:
+            info = self.qbt_client.get_torrent_info(self.current_torrent_hash) or {}
+            progress = info.get('progress') or 0
+            dlspeed = info.get('dlspeed') or 0
+            seeds = info.get('num_seeds') or 0
+            eta = info.get('eta') or 0
+
+            def fmt_speed(v: int) -> str:
+                kb = 1024; mb = kb*1024; gb = mb*1024
+                if v >= gb: return f"{v/gb:.2f} ГБ/с"
+                if v >= mb: return f"{v/mb:.2f} МБ/с"
+                if v >= kb: return f"{v/kb:.1f} КБ/с"
+                return f"{v} Б/с"
+
+            def fmt_eta(sec: int) -> str:
+                if not sec or sec < 0: return "--"
+                h = sec // 3600; m = (sec % 3600)//60; s = sec % 60
+                return f"{h}ч {m}м" if h else (f"{m}м {s}с" if m else f"{s}с")
+
+            def update_ui():
+                self.global_progress.value = progress
+                self.global_percent.value = f"{progress*100:.1f}%"
+                self.global_speed.value = f"Скорость: {fmt_speed(dlspeed)}"
+                self.global_seeds.value = f"Сиды: {seeds}"
+                self.global_eta.value = f"Осталось: {fmt_eta(eta)}"
+                self.page.update()
+                if progress >= 0.999:
+                    self._monitor_stop.set()
+                    self.stop_torrent_monitor()
+
+            try:
+                self.page.call_from_thread(update_ui)
+            except Exception:
+                update_ui()
+            time.sleep(1)
+
+    def _on_torrent_tick(self, e):
+        if not self.current_torrent_hash or not (self.qbt_client and self.qbt_client.is_connected):
+            return
+        info = self.qbt_client.get_torrent_info(self.current_torrent_hash)
+        if not info:
+            return
+        progress = info.get('progress') or 0
+        dlspeed = info.get('dlspeed') or 0
+        seeds = info.get('num_seeds') or 0
+        eta = info.get('eta') or 0
+
+        def fmt_speed(v: int) -> str:
+            kb = 1024; mb = kb*1024; gb = mb*1024
+            if v >= gb: return f"{v/gb:.2f} GB/s"
+            if v >= mb: return f"{v/mb:.2f} MB/s"
+            if v >= kb: return f"{v/kb:.1f} KB/s"
+            return f"{v} B/s"
+
+        def fmt_eta(sec: int) -> str:
+            if not sec or sec < 0: return "--"
+            h = sec // 3600; m = (sec % 3600)//60; s = sec % 60
+            return f"{h}ч {m}м" if h else (f"{m}м {s}с" if m else f"{s}с")
+
+        self.global_progress.value = progress
+        self.global_percent.value = f"{progress*100:.1f}%"
+        self.global_speed.value = fmt_speed(dlspeed)
+        self.global_seeds.value = f"Сиды: {seeds}"
+        self.global_eta.value = f"ETA: {fmt_eta(eta)}"
+        self.page.update()
+        if progress >= 0.999:
+            self.stop_torrent_monitor()
 

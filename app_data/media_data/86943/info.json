@@ -1,0 +1,752 @@
+{
+    "fees": {
+        "world": {
+            "value": 309408,
+            "currency": "$"
+        }
+    },
+    "status": null,
+    "externalId": {
+        "imdb": "tt0428446",
+        "tmdb": 18437,
+        "kpHD": null
+    },
+    "rating": {
+        "kp": 6.619,
+        "imdb": 5.9,
+        "filmCritics": 5.3,
+        "russianFilmCritics": 0,
+        "await": null
+    },
+    "votes": {
+        "kp": 6575,
+        "imdb": 10648,
+        "filmCritics": 12,
+        "russianFilmCritics": 0,
+        "await": 0
+    },
+    "backdrop": {
+        "url": null,
+        "previewUrl": null
+    },
+    "movieLength": 94,
+    "images": {
+        "framesCount": 14
+    },
+    "productionCompanies": [
+        {
+            "name": "3 Ring Circus Films",
+            "url": null,
+            "previewUrl": null
+        },
+        {
+            "name": "Blumhouse Productions",
+            "url": "https://www.themoviedb.org/t/p/original/kDedjRZwO8uyFhuHamomOhN6fzG.png",
+            "previewUrl": "https://www.themoviedb.org/t/p/w500/kDedjRZwO8uyFhuHamomOhN6fzG.png"
+        }
+    ],
+    "spokenLanguages": [
+        {
+            "name": "English",
+            "nameEn": "English"
+        }
+    ],
+    "id": 86943,
+    "type": "movie",
+    "name": "Премия Дарвина",
+    "description": "Майкл – судебный детектив, немного боящийся вида крови. Его направили в помощь молодой Сири, работнице страховой компании, исследующей различные дорожные происшествия. Вместе они отправляются в небольшое путешествие, чтобы разобраться с делом потенциального номинанта на премию Дарвина.",
+    "distributors": {
+        "distributor": null,
+        "distributorRelease": "Союз-Видео"
+    },
+    "premiere": {
+        "world": "2006-01-25T00:00:00.000Z",
+        "dvd": "2007-05-24T00:00:00.000Z",
+        "bluray": null,
+        "cinema": null,
+        "digital": null,
+        "russia": null
+    },
+    "slogan": "Самая дурацкая смерть на свете заслуживает награды!",
+    "year": 2006,
+    "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1900788/d5e50d21-e998-4cc0-81fb-c8734ecd4e22/600x900",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1900788/d5e50d21-e998-4cc0-81fb-c8734ecd4e22/300x450"
+    },
+    "facts": [
+        {
+            "value": "В эпизоде с покупкой ракетного двигателя сыграли Адам Сэвидж и Джейми Хайнеман, ведущие телепередачи «Разрушители легенд». Случай с двигателем воспроизводился в одном из выпусков «Разрушителей…», где было доказано, что он неправдоподобен.",
+            "type": "FACT",
+            "spoiler": false
+        }
+    ],
+    "genres": [
+        {
+            "name": "мелодрама"
+        },
+        {
+            "name": "комедия"
+        },
+        {
+            "name": "приключения"
+        }
+    ],
+    "countries": [
+        {
+            "name": "США"
+        }
+    ],
+    "seasonsInfo": null,
+    "persons": [
+        {
+            "id": 15980,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_15980.jpg",
+            "name": "Джозеф Файнс",
+            "enName": "Joseph Fiennes",
+            "description": "Michael Burrows",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 9329,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_9329.jpg",
+            "name": "Вайнона Райдер",
+            "enName": "Winona Ryder",
+            "description": "Siri Taylor",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 676,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_676.jpg",
+            "name": "Дэвид Аркетт",
+            "enName": "David Arquette",
+            "description": "Harvey",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 47224,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_47224.jpg",
+            "name": "Тай Бурелл",
+            "enName": "Ty Burrell",
+            "description": "Emile",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 27756,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_27756.jpg",
+            "name": "Джош Чарльз",
+            "enName": "Josh Charles",
+            "description": "Paramedic",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 58337,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_58337.jpg",
+            "name": "Кевин Данн",
+            "enName": "Kevin Dunn",
+            "description": "Insurance Exec",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 13664,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_13664.jpg",
+            "name": "Нора Данн",
+            "enName": "Nora Dunn",
+            "description": "Mrs. Pearlman",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1964,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1964.jpg",
+            "name": "Джуда Фридландер",
+            "enName": "Judah Friedlander",
+            "description": "Simon",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 24370,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_24370.jpg",
+            "name": "Лукас Хаас",
+            "enName": "Lukas Haas",
+            "description": "Farley",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 6054,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_6054.jpg",
+            "name": "Том Холландер",
+            "enName": "Tom Hollander",
+            "description": "Henry",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 7118,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_7118.jpg",
+            "name": "Брэд Хант",
+            "enName": "Brad Hunt",
+            "description": "Stan",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 3777,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_3777.jpg",
+            "name": "Джульетт Льюис",
+            "enName": "Juliette Lewis",
+            "description": "Joleen",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 9900,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_9900.jpg",
+            "name": "Джулианна Маргулис",
+            "enName": "Julianna Margulies",
+            "description": "Carla",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 10087,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_10087.jpg",
+            "name": "Тим Блейк Нельсон",
+            "enName": "Tim Blake Nelson",
+            "description": "Perp",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 11658,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_11658.jpg",
+            "name": "Алессандро Нивола",
+            "enName": "Alessandro Nivola",
+            "description": "Ad Exec",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 34283,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_34283.jpg",
+            "name": "Крис Пенн",
+            "enName": "Chris Penn",
+            "description": "Tom",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1857,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1857.jpg",
+            "name": "Макс Перлих",
+            "enName": "Max Perlich",
+            "description": "Bob",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 8279,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_8279.jpg",
+            "name": "Д.Б. Суини",
+            "enName": "D.B. Sweeney",
+            "description": "Detective Maguire",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 10306,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_10306.jpg",
+            "name": "Робин Танни",
+            "enName": "Robin Tunney",
+            "description": "Zoe",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 33505,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_33505.jpg",
+            "name": "Уилмер Вальдеррама",
+            "enName": "Wilmer Valderrama",
+            "description": "Documentary Filmmaker",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206357,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206357.jpg",
+            "name": "Адонал Фойл",
+            "enName": "Adonal Foyle",
+            "description": "Detective",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 2088,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2088.jpg",
+            "name": "Том Райт",
+            "enName": "Tom Wright",
+            "description": "Detective",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 771393,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_771393.jpg",
+            "name": "Адам Сэвэдж",
+            "enName": "Adam Savage",
+            "description": "Adam",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206359,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206359.jpg",
+            "name": "Джэйми Хайнеман",
+            "enName": "Jamie Hyneman",
+            "description": "Army Dude",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 8460,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_8460.jpg",
+            "name": "Ричмонд Аркетт",
+            "enName": "Richmond Arquette",
+            "description": "Mr. Pearlman",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 82825,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_82825.jpg",
+            "name": "Мики Брайтенштайн",
+            "enName": "Mickey Breitenstein",
+            "description": "Mr. Harris",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 3570,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_3570.jpg",
+            "name": "Джош Корнблут",
+            "enName": "Josh Kornbluth",
+            "description": "Dentist",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 150844,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_150844.jpg",
+            "name": "Джерри Харрисон",
+            "enName": "Jerry Harrison",
+            "description": "Guy in Bar #1",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 12847,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_12847.jpg",
+            "name": "Джон До",
+            "enName": "John Doe",
+            "description": "Guy in Bar #2",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 187879,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_187879.jpg",
+            "name": "Лоуренс Ферлингетти",
+            "enName": "Lawrence Ferlinghetti",
+            "description": null,
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 38627,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_38627.jpg",
+            "name": "Росс Паттерсон",
+            "enName": "Ross Patterson",
+            "description": "Co Worker #1",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 32181,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_32181.jpg",
+            "name": "Расселл Стейнберг",
+            "enName": "Russell Steinberg",
+            "description": "Co Worker #2",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1052109,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1052109.jpg",
+            "name": "Макс Коммон",
+            "enName": "Max Common",
+            "description": "Young Burrows",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206360,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206360.jpg",
+            "name": "Ретт Веллингтон",
+            "enName": "Rhett Wellington",
+            "description": "Andy (в титрах: Rhett Ramirez)",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206361,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206361.jpg",
+            "name": "Винсент Брубэйкер",
+            "enName": "Vincent Brubaker",
+            "description": "School Kid #1",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206362,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206362.jpg",
+            "name": "Элиас Стефанек",
+            "enName": "Elias Stefanek",
+            "description": "School Kid #2",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206363,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206363.jpg",
+            "name": "Зоша Стефанек",
+            "enName": "Zosha Stefanek",
+            "description": "School Kid #3",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206364,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206364.jpg",
+            "name": "Эмма С. Тейлор",
+            "enName": "Emma C. Taylor",
+            "description": "School Kid #4",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 404123,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_404123.jpg",
+            "name": "Р.Дж. Оуэнс",
+            "enName": "R.J. Owens",
+            "description": "Shower Guy #1",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206365,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206365.jpg",
+            "name": "Брюс Ли Сэйдж",
+            "enName": "Bruce Lee Sage",
+            "description": "Shower Guy #2",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 12262,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_12262.jpg",
+            "name": "Боб Саенц",
+            "enName": "Bob Sáenz",
+            "description": "Shower Guy #3",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 730672,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_730672.jpg",
+            "name": "Стив Айриш",
+            "enName": "Steve Irish",
+            "description": "Large Detective",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 75102,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_75102.jpg",
+            "name": "Вэл Даймонд",
+            "enName": "Val Diamond",
+            "description": "Waitress",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206366,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206366.jpg",
+            "name": "Джэми Хейн",
+            "enName": "Jamie Hein",
+            "description": "Cashier",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 38825,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_38825.jpg",
+            "name": "Мэри Саударгас",
+            "enName": "Mary Saudargas",
+            "description": "Mrs. Sparrow",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 22981,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_22981.jpg",
+            "name": "Джордж Магуайр",
+            "enName": "George Maguire",
+            "description": "Car Salesman",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 884238,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_884238.jpg",
+            "name": "Стефан Смит Коллинз",
+            "enName": "Stephan Smith Collins",
+            "description": "Viper Owner",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206367,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206367.jpg",
+            "name": "Элли Буш",
+            "enName": "Allie Busch",
+            "description": "Pearlman Kid",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1206368,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1206368.jpg",
+            "name": "Мэттью Буш",
+            "enName": "Matthew Busch",
+            "description": "Pearlman Kid",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 90804,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_90804.jpg",
+            "name": "Род Аррантс",
+            "enName": "Rod Arrants",
+            "description": "Pilot",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 135694,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_135694.jpg",
+            "name": "Дэвид Китэй",
+            "enName": "David Kitay",
+            "description": null,
+            "profession": "композиторы",
+            "enProfession": "composer"
+        },
+        {
+            "id": 1784548,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1784548.jpg",
+            "name": "Питер Джеймисон",
+            "enName": "Peter Jamison",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 148773,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_148773.jpg",
+            "name": "Дон Дэй",
+            "enName": "Don Day",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 1988515,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1988515.jpg",
+            "name": "Эми Браунсон",
+            "enName": "Amy Brownson",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 1896388,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1896388.jpg",
+            "name": "Кэтерин Ковелл",
+            "enName": "Katherine Covell",
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 38806,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_38806.jpg",
+            "name": "Финн Тейлор",
+            "enName": "Finn Taylor",
+            "description": null,
+            "profession": "режиссеры",
+            "enProfession": "director"
+        },
+        {
+            "id": 1690117,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1690117.jpg",
+            "name": "Рик ЛеКомпт",
+            "enName": "Rick LeCompte",
+            "description": null,
+            "profession": "монтажеры",
+            "enProfession": "editor"
+        },
+        {
+            "id": 470768,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_470768.jpg",
+            "name": "Хиро Нарита",
+            "enName": "Hiro Narita",
+            "description": null,
+            "profession": "операторы",
+            "enProfession": "operator"
+        },
+        {
+            "id": 10090,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_10090.jpg",
+            "name": "Джейсон Блум",
+            "enName": "Jason Blum",
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 31218,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_31218.jpg",
+            "name": "Джейн Синделл",
+            "enName": "Jane Sindell",
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 1142645,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1142645.jpg",
+            "name": "Джонни Вау",
+            "enName": "Johnny Wow",
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 3584,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_3584.jpg",
+            "name": "Дебби Брубейкер",
+            "enName": "Debbie Brubaker",
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 38806,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_38806.jpg",
+            "name": "Финн Тейлор",
+            "enName": "Finn Taylor",
+            "description": null,
+            "profession": "сценаристы",
+            "enProfession": "writer"
+        }
+    ],
+    "lists": [],
+    "typeNumber": 1,
+    "alternativeName": "The Darwin Awards",
+    "enName": null,
+    "names": [
+        {
+            "name": "Премия Дарвина"
+        },
+        {
+            "name": "The Darwin Awards"
+        },
+        {
+            "name": "Darwin Awards, muertes de risa",
+            "language": "ES",
+            "type": null
+        },
+        {
+            "name": "Darwin-díj - Halni tudni kell!",
+            "language": "HU",
+            "type": null
+        },
+        {
+            "name": "The darwin awards",
+            "language": "FR",
+            "type": null
+        }
+    ],
+    "ageRating": 16,
+    "budget": {},
+    "ratingMpaa": "r",
+    "shortDescription": null,
+    "technology": {
+        "hasImax": false,
+        "has3D": false
+    },
+    "ticketsOnSale": false,
+    "updatedAt": "2025-07-01T18:16:15.336Z",
+    "similarMovies": [],
+    "sequelsAndPrequels": [],
+    "logo": {
+        "url": "https://image.openmoviedb.com/tmdb-images/original/lSmypB1caXVW62z9IwP1NNhSRWE.png",
+        "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/lSmypB1caXVW62z9IwP1NNhSRWE.png"
+    },
+    "top10": null,
+    "top250": null,
+    "audience": [
+        {
+            "count": 19307,
+            "country": "Италия"
+        },
+        {
+            "count": 4253,
+            "country": "Латвия"
+        },
+        {
+            "count": 4005,
+            "country": "Испания"
+        }
+    ],
+    "deletedAt": null,
+    "isSeries": false,
+    "seriesLength": null,
+    "totalSeriesLength": null,
+    "networks": null,
+    "videos": {
+        "trailers": [
+            {
+                "url": "https://www.youtube.com/embed/KIEQXIkXrPU",
+                "name": "The Darwin Awards Trailer",
+                "site": "youtube",
+                "type": "TRAILER"
+            }
+        ]
+    },
+    "isTmdbChecked": true,
+    "watchability": {
+        "items": []
+    },
+    "userRatingsParsed": true,
+    "keywordsParsed": true,
+    "studioParsed": true,
+    "saved_magnet": "magnet:?xt=urn:btih:5941930307816E56F4D30FB7128893530BF4B8FA&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet&dn=%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%8F%20%D0%94%D0%B0%D1%80%D0%B2%D0%B8%D0%BD%D0%B0%20%2F%20The%20Darwin%20Awards%20(%D0%A4%D0%B8%D0%BD%D0%BD%20%D0%A2%D0%B5%D0%B9%D0%BB%D0%BE%D1%80%20%2F%20Finn%20Taylor)%20%5B2006%2C%20%D0%A1%D0%A8%D0%90%2C%20%D0%BC%D0%B5%D0%BB%D0%BE%D0%B4%D1%80%D0%B0%D0%BC%D0%B0%2C%20%D0%BA%D0%BE%D0%BC%D0%B5%D0%B4%D0%B8%D1%8F%2C%20%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%2C%20WEB-DL%201080p%5D%20DVO%20(%D0%A1%D1%82%D1%83%D0%B4%D0%B8%D1%8F%20%D0%98%D0%BD%D0%B8%D1%81)%20%2B%20Sub%20(Rus",
+    "torrent_hash": "5941930307816e56f4d30fb7128893530bf4b8fa"
+}

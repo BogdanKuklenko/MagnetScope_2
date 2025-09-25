@@ -12,7 +12,11 @@ POSTER_FILENAME = "poster.jpg"
 BACKDROP_FILENAME = "backdrop.jpg"
 HISTORY_FILENAME = "download_history.json"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+MAGNET_LINKS_FILENAME = "magnet_links.json"
+>>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
 COLLECTIONS_FILENAME = "collections.json"
 >>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
 
@@ -33,7 +37,11 @@ class DataManager:
         self.media_path = self.base_path / "media_data"
         self.history_path = self.base_path / HISTORY_FILENAME
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+        self.magnet_links_path = self.base_path / MAGNET_LINKS_FILENAME
+>>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
         self.collections_path = self.base_path / COLLECTIONS_FILENAME
 >>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
 
@@ -204,6 +212,70 @@ class DataManager:
             print(f"Ошибка сохранения истории: {e}")
 <<<<<<< HEAD
 =======
+
+    # --- Сохраненные magnet-ссылки ---
+    def load_magnet_links(self) -> list[str]:
+        try:
+            if not self.magnet_links_path.exists():
+                return []
+            with open(self.magnet_links_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    return [str(x) for x in data if isinstance(x, str)]
+        except Exception as e:
+            print(f"Ошибка загрузки magnet-ссылок: {e}")
+        return []
+
+    def save_magnet_link(self, link: str, max_keep: int = 50):
+        """Сохраняет magnet-ссылку (уникально, последние выше).
+
+        :param link: Строка magnet-ссылки
+        :param max_keep: Максимум ссылок для хранения
+        """
+        if not link or not link.startswith("magnet:"):
+            return
+        try:
+            links = self.load_magnet_links()
+            # Удаляем если уже есть и добавляем в начало
+            links = [l for l in links if l != link]
+            links.insert(0, link)
+            links = links[:max_keep]
+            with open(self.magnet_links_path, "w", encoding="utf-8") as f:
+                json.dump(links, f, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"Ошибка сохранения magnet-ссылки: {e}")
+
+    # --- Персональная magnet-ссылка для конкретного фильма ---
+    def get_saved_magnet_for_item(self, kinopoisk_id: Union[int, str]) -> Optional[str]:
+        info_file_path = self.get_media_item_path(kinopoisk_id) / INFO_FILENAME
+        if not info_file_path.exists():
+            return None
+        try:
+            with open(info_file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            link = data.get("saved_magnet")
+            return link if isinstance(link, str) else None
+        except Exception as e:
+            print(f"Ошибка чтения сохраненной magnet-ссылки для {kinopoisk_id}: {e}")
+            return None
+
+    def set_saved_magnet_for_item(self, kinopoisk_id: Union[int, str], link: Optional[str]):
+        info_file_path = self.get_media_item_path(kinopoisk_id) / INFO_FILENAME
+        if not info_file_path.exists():
+            return
+        try:
+            with open(info_file_path, "r+", encoding="utf-8") as f:
+                data = json.load(f)
+                if link and link.startswith("magnet:"):
+                    data["saved_magnet"] = link
+                else:
+                    # удаляем поле при пустом/некорректном значении
+                    data.pop("saved_magnet", None)
+                f.seek(0)
+                json.dump(data, f, ensure_ascii=False, indent=4)
+                f.truncate()
+        except Exception as e:
+            print(f"Ошибка записи сохраненной magnet-ссылки для {kinopoisk_id}: {e}")
 
     # --- Работа с коллекциями ---
 
