@@ -8,11 +8,7 @@ import threading
 import time
 
 # Импортируем наши сервисы и виджеты
-<<<<<<< HEAD
-from data.data_manager import DataManager, INFO_FILENAME, POSTER_FILENAME
-=======
 from data.data_manager import DataManager, INFO_FILENAME, POSTER_FILENAME, BACKDROP_FILENAME
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
 from api.kinopoisk_client import KinopoiskClient
 from api.qbittorrent_client import QBittorrentClient
 from core.config import save_config
@@ -91,15 +87,12 @@ class AppUI:
         if not full_details: self.show_snackbar("Не удалось получить детальную информацию.", "red"); return
         self.data_manager.save_media_info(kinopoisk_id, full_details); poster_url = full_details.get("poster", {}).get("url")
         if poster_url: self.data_manager.save_poster(kinopoisk_id, poster_url)
-<<<<<<< HEAD
-=======
         backdrop = full_details.get("backdrop", {}) if isinstance(full_details.get("backdrop", {}), dict) else {}
         self.data_manager.save_backdrop(
             kinopoisk_id,
             backdrop.get("url"),
             backdrop.get("previewUrl")
         )
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
         self.show_snackbar(f"'{full_details.get('name')}' добавлен в библиотеку!"); self.load_library_items()
 
     def handle_search(self, e):
@@ -136,13 +129,6 @@ class AppUI:
             if info_file.exists():
                 with open(info_file, "r", encoding="utf-8") as f: data = json.load(f)
                 poster_src = str(poster_file.resolve()) if poster_file.exists() else "https://placehold.co/180x270/222/fff?text=No+Poster"
-<<<<<<< HEAD
-                status_icon = ft.Container()
-                if data.get("torrent_hash"): status_icon = ft.Icon(name="download_done", color="green", right=5, top=5)
-<<<<<<< HEAD
-                card_content = ft.Stack([ft.Column([ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)), ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True), ft.Text(f"{data.get('year', '')}", size=12)], spacing=4, alignment=ft.MainAxisAlignment.START), status_icon])
-=======
-=======
                 status_badge = ft.Container()
                 if data.get("torrent_hash"):
                     status_badge = ft.Container(
@@ -163,7 +149,6 @@ class AppUI:
                             ),
                         ]),
                     )
->>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
 
                 # Меню на карточке: Открыть / Удалить
                 kinopoisk_id = data.get("id")
@@ -178,18 +163,10 @@ class AppUI:
                     right=5,
                     top=5,
                 )
-<<<<<<< HEAD
-
-                card_main = ft.Column([ft.Image(src=poster_src, border_radius=ft.border_radius.all(8)), ft.Text(data.get('name','N/A'), weight=ft.FontWeight.BOLD, size=14, no_wrap=True), ft.Text(f"{data.get('year', '')}", size=12)], spacing=4, alignment=ft.MainAxisAlignment.START)
-                card_content = ft.Stack([card_main, status_icon, menu_button])
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
-                clickable_card = ft.Card(ft.Container(content=card_content, on_click=partial(self.handle_show_details, data), border_radius=ft.border_radius.all(8)), elevation=2); self.library_grid.controls.append(clickable_card)
-=======
                 poster = ft.Image(src=poster_src, border_radius=ft.border_radius.all(8), width=180, height=270, fit=ft.ImageFit.COVER)
                 card_content = ft.Stack([poster, status_badge, menu_button], width=180, height=270)
                 clickable_container = ft.Container(content=card_content, on_click=partial(self.handle_show_details, data))
                 self.library_grid.controls.append(clickable_container)
->>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
         self.page.update()
 
     def open_rutracker_search(self, title: str, year: str | int | None):
@@ -224,8 +201,6 @@ class AppUI:
     def build_movies_view(self) -> ft.Control:
         search_bar = ft.Row([self.search_field, ft.IconButton(icon="search", on_click=self.handle_search, tooltip="Искать")])
         return ft.Column([ft.Container(content=search_bar, padding=ft.padding.only(bottom=10)), self.library_grid], expand=True)
-<<<<<<< HEAD
-=======
 
     def show_person_movies(self, person_id: int, person_name: str):
         """Отображает все фильмы из библиотеки с участием указанного человека."""
@@ -308,7 +283,6 @@ class AppUI:
         except Exception:
             pass
         self.page.update()
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
     
     def handle_nav_change(self, e):
         selected_index = e.control.selected_index

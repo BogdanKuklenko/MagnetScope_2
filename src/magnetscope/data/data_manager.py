@@ -11,14 +11,8 @@ INFO_FILENAME = "info.json"
 POSTER_FILENAME = "poster.jpg"
 BACKDROP_FILENAME = "backdrop.jpg"
 HISTORY_FILENAME = "download_history.json"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 MAGNET_LINKS_FILENAME = "magnet_links.json"
->>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
 COLLECTIONS_FILENAME = "collections.json"
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
 
 
 class DataManager:
@@ -36,14 +30,8 @@ class DataManager:
         self.base_path = Path(base_data_path).resolve()
         self.media_path = self.base_path / "media_data"
         self.history_path = self.base_path / HISTORY_FILENAME
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
         self.magnet_links_path = self.base_path / MAGNET_LINKS_FILENAME
->>>>>>> c7cde51 (Enhance movie card UI with Rutracker search functionality and improve details dialog layout)
         self.collections_path = self.base_path / COLLECTIONS_FILENAME
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
 
         # Создаем необходимые директории, если их нет
         self.base_path.mkdir(exist_ok=True)
@@ -135,8 +123,6 @@ class DataManager:
             return
         print(f"Не удалось сохранить постер для id {kinopoisk_id} по доступным URL.")
 
-<<<<<<< HEAD
-=======
     def save_backdrop(self, kinopoisk_id: Union[int, str], backdrop_url: Optional[str], fallback_url: Optional[str] = None):
         """Скачивает и сохраняет бэкдроп (широкий фон) медиа.
 
@@ -181,8 +167,6 @@ class DataManager:
             return
         if try_download(fallback_url):
             return
-
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
     def delete_media_item(self, kinopoisk_id: Union[int, str]):
         """Удаляет папку со всеми данными о медиа."""
         item_path = self.get_media_item_path(kinopoisk_id)
@@ -210,8 +194,6 @@ class DataManager:
                 json.dump(history_data, f, ensure_ascii=False, indent=4)
         except IOError as e:
             print(f"Ошибка сохранения истории: {e}")
-<<<<<<< HEAD
-=======
 
     # --- Сохраненные magnet-ссылки ---
     def load_magnet_links(self) -> list[str]:
@@ -320,4 +302,3 @@ class DataManager:
         except Exception as e:
             print(f"Ошибка добавления в коллекцию '{collection_name}': {e}")
             return False
->>>>>>> f107872 (Add initial project structure with core functionality for MagnetScope application)
